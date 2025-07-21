@@ -233,11 +233,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         <img src="${carouselProjects[i].image}" alt="Project Image" />
                     </div>
                     <div class="carousel-info">
-                        <p class="text-sm font-medium mb-4">Completed • ${carouselProjects[i].date}</p>
-                        <h2 class="text-2xl font-bold mb-4">${carouselProjects[i].title}</h2>
-                        <p class="text-sm mb-4">${carouselProjects[i].desc}</p>
-                        <p class="text-xs">${carouselProjects[i].tech}</p>
-                        <a href="${carouselProjects[i].link}" target="_blank" class="carousel-visit">Visit Live Site -> soon</a>
+                        <p class="fluid-text-p text-sm font-medium mb-2">Completed • ${carouselProjects[i].date}</p>
+                        <h2 class="fluid-text-h text-2xl font-bold mb-2">${carouselProjects[i].title}</h2>
+                        <p class="fluid-text-p text-sm mb-2">${carouselProjects[i].desc}</p>
+                        <p class="fluid-text-p text-xs">${carouselProjects[i].tech}</p>
+                        <a href="${carouselProjects[i].link}" target="_blank" class="carousel-visit fluid-text-h">Visit Live Site -> soon</a>
                     </div>
                 </div>`;
             carouselStackElement.appendChild(card);
