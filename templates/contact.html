@@ -1,0 +1,41 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class="min-h-screen flex flex-col items-center justify-center px-4">
+    <!-- Hero Section -->
+    <div class="w-full max-w-4xl contact-animated-card text-center mb-10 relative overflow-hidden" id="contact-hero-section">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's create something amazing together</h2>
+        <p class="text-lg text-white mb-6">Ready to bring your next project to life? Let's connect and discuss. I can help you to achieve your goals.</p>
+        <button id="contactOpenContactFormBtn"
+                class="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 font-semibold transition duration-300">
+            Contact Me →
+        </button>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactContactForm" class="contact-contact-card contact-slide-in-left items-stretch text-left hidden">
+        <h2 class="text-3xl font-bold mb-6 text-center text-black">Contact Me</h2>
+        <div class="mb-4 w-full">
+            <label class="block text-sm font-semibold mb-1">Name</label>
+            <input id="contactName" type="text" name="name" placeholder="Your full name" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-500 focus:ring focus:ring-indigo-400" />
+        </div>
+        <div class="mb-4">
+            <label class="block text-sm font-semibold mb-1">Email</label>
+            <input id="contactEmail" type="email" name="email" placeholder="you@example.com" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-500 focus:ring focus:ring-indigo-400" />
+        </div>
+        <div class="mb-6 w-full">
+            <label class="block text-sm font-semibold mb-1">Message</label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Type your message here..." required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-500 focus:ring focus:ring-indigo-400"></textarea>
+        </div>
+        <div class="mb-6">
+            <label class="block text-sm font-semibold mb-1">Attachment (optional)</label>
+            <input type="file" name="attachment" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black focus:ring focus:ring-indigo-400" />
+        </div>
+        <button id="contactSubmitBtn" type="submit" disabled class="w-full mt-2 bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 cursor-not-allowed">
+            Send Message
+        </button>
+        <p id="contactResponseMsg" class="mt-4 text-sm text-center"></p>
+    </form>
+</div>
+
+<div id="contactToast">Message sent successfully!</div>
+{% endblock %}
