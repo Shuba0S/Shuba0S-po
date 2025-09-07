@@ -1,41 +1,63 @@
-﻿{% extends "base.html" %}
-{% block content %}
-<div class=" flex flex-col items-center justify-center px-4">
-    <!-- Hero Section -->
-    <div class="w-full max-w-4xl contact-animated-card text-center mb-10 relative overflow-hidden" id="contact-hero-section">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's create something amazing together</h2>
-        <p class="text-lg text-white mb-6">Ready to bring your next project to life? Let's connect and discuss. I can help you to achieve your goals.</p>
-        <button id="contactOpenContactFormBtn"
-                class="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 font-semibold transition duration-300">
-            Contact Me →
-        </button>
-    </div>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="./static/css/output.css" type="text/css" />
+    <link rel="stylesheet" href="./static/css/manual.css" type="text/css" />
+</head>
+<body class="bg-white text-black font-serif">
+    <!-- Navbar -->
+    <header class="p-6 flex justify-between items-center border-b">
+        <h1 class="text-2xl font-bold">MyPortfolio</h1>
+        <nav class="space-x-6">
+            <a href="/" class="hover:underline">Home</a>
+            <a href="/contact" class="hover:underline">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Contact Form -->
-    <form id="contactContactForm" class="contact-contact-card contact-slide-in-left items-stretch text-left hidden">
-        <h2 class="text-3xl font-bold mb-6 text-center text-black">Contact Me</h2>
-        <div class="mb-4 w-full">
-            <label class="block text-sm font-semibold mb-1">Name</label>
-            <input id="contactName" type="text" name="name" placeholder="Your full name" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-500 focus:ring focus:ring-indigo-400" />
-        </div>
-        <div class="mb-4">
-            <label class="block text-sm font-semibold mb-1">Email</label>
-            <input id="contactEmail" type="email" name="email" placeholder="you@example.com" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-500 focus:ring focus:ring-indigo-400" />
-        </div>
-        <div class="mb-6 w-full">
-            <label class="block text-sm font-semibold mb-1">Message</label>
-            <textarea id="contactMessage" name="message" rows="4" placeholder="Type your message here..." required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black placeholder-gray-500 focus:ring focus:ring-indigo-400"></textarea>
-        </div>
-        <div class="mb-6">
-            <label class="block text-sm font-semibold mb-1">Attachment (optional)</label>
-            <input type="file" name="attachment" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-black focus:ring focus:ring-indigo-400" />
-        </div>
-        <button id="contactSubmitBtn" type="submit" disabled class="w-full mt-2 bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 cursor-not-allowed">
-            Send Message
-        </button>
-        <p id="contactResponseMsg" class="mt-4 text-sm text-center"></p>
-    </form>
-</div>
+    <main class="max-w-2xl mx-auto p-10">
+        <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
 
-<div id="contactToast">Message sent successfully!</div>
-{% endblock %}
+        <!-- Notifications -->
+        {% if success %}
+        <div class="mb-4 p-4 rounded-md bg-green-100 text-green-800 border border-green-300">
+            ✅ Your message has been sent successfully!
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="mb-4 p-4 rounded-md bg-red-100 text-red-800 border border-red-300">
+            ❌ Error: {{ error }}
+        </div>
+        {% endif %}
+
+        <!-- Contact Form -->
+        <form method="post" action="/contact" enctype="multipart/form-data" class="space-y-6">
+            <div>
+                <label class="block mb-2 text-sm font-medium">Name</label>
+                <input type="text" name="name" required class="w-full border p-3 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium">Email</label>
+                <input type="email" name="email" required class="w-full border p-3 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium">Subject</label>
+                <input type="text" name="subject" required class="w-full border p-3 rounded-md">
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium">Message</label>
+                <textarea name="message" required rows="5" class="w-full border p-3 rounded-md"></textarea>
+            </div>
+            <div>
+                <label class="block mb-2 text-sm font-medium">Attachment (optional)</label>
+                <input type="file" name="file" class="w-full border p-2 rounded-md">
+            </div>
+            <button type="submit"
+                    class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition">
+                Send
+            </button>
+        </form>
+    </main>
+</body>
+</html>

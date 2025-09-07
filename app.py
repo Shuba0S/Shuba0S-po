@@ -1,108 +1,94 @@
-from fastapi import FastAPI, Form, Request, HTTPException, UploadFile, File
-from fastapi.responses import RedirectResponse, HTMLResponse
+from fastapi import FastAPI, Request, UploadFile, File, Form
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from starlette.middleware.sessions import SessionMiddleware
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+from jinja2.utils import missing 
+from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
-from email.message import EmailMessage
-import smtplib
+import smtplib,os
 
-# from config import EMAIL_USER, EMAIL_PASSWORD, EMAIL_TO
-import os
+load_dotenv()
 
-EMAIL_USER = os.environ.get("EMAIL_USER")
-EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
-EMAIL_TO = os.environ.get("EMAIL_TO")
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
+EMAIL_TO = os.getenv("EMAIL_TO")
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://shuba-s.onrender.com"],  # For local testing
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
+templates=Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.post("/contact")
-async def contact(
+@app.get("/",response_class="HTMLResponse")
+async def home(request:Request):
+    return templates.TemplateResponse("home.html",{"request":request})
+
+@app.get("/zomato-data-analysis-by-shuba",response_class="HTMLResponse")
+async def home(request:Request):
+    return templates.TemplateResponse("firstpro.html",{"request":request})
+
+@app.get("/blood-bank-ms-by-shuba",response_class="HTMLResponse")
+async def home(request:Request):
+    return templates.TemplateResponse("secondpro.html",{"request":request})
+
+@app.get("/contact",response_class="HTMLResponse")
+async def contact(request:Request):
+    return templates.TemplateResponse("contact.html",{"request":request})
+
+@app.post("/contact", response_class=HTMLResponse)
+async def send_message(
+    request: Request,
     name: str = Form(...),
     email: str = Form(...),
+    subject: str = Form(...),
     message: str = Form(...),
-    attachment: UploadFile = File(None),
+    file: UploadFile = File(None)
 ):
     body = f"From: {name} <{email}>\n\n{message}"
 
-    msg = EmailMessage()
-    msg["Subject"] = f"New Message from {name}"
-    msg["From"] = EMAIL_USER
-    msg["To"] = EMAIL_TO
-    msg.set_content(body)
-    msg.add_header("Reply-To", email)
-
-    if attachment:
-        file_data = await attachment.read()
-        msg.add_attachment(
-            file_data,
-            maintype="application",
-            subtype="octet-stream",
-            filename=attachment.filename,
-        )
-
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login(EMAIL_USER, EMAIL_PASSWORD)
-            smtp.send_message(msg)
-        return {"status": "success"}
+        msg = MIMEMultipart()
+        msg["From"] = EMAIL_USER
+        msg["To"] = EMAIL_TO
+        msg["Subject"] = f"[Portfolio] {subject} - sent by - {name}"
+        msg.attach(MIMEText(body, "plain"))
+
+        # Handle file upload
+        if file is not None:
+            file_bytes = await file.read()
+            if file_bytes:
+                attachment = MIMEApplication(file_bytes, Name=file.filename or "attachment")
+                attachment["Content-Disposition"] = f'attachment; filename="{file.filename or "attachment"}"'
+                msg.attach(attachment)
+
+        # --- FIX: Ensure correct connection method ---
+        EMAIL_PORT_INT = int(EMAIL_PORT)
+
+        if EMAIL_PORT_INT == 465:  # SSL
+            with smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT_INT, timeout=30) as server:
+                server.login(EMAIL_USER, EMAIL_PASS)
+                server.sendmail(EMAIL_USER, EMAIL_TO, msg.as_string())
+
+        else:  # STARTTLS (usually port 587)
+            with smtplib.SMTP(EMAIL_HOST, EMAIL_PORT_INT, timeout=30) as server:
+                server.ehlo()
+                server.starttls()
+                server.ehlo()
+                server.login(EMAIL_USER, EMAIL_PASS)
+                server.sendmail(EMAIL_USER, EMAIL_TO, msg.as_string())
+
+        return templates.TemplateResponse("contact.html", {"request": request, "success": True})
+
     except Exception as e:
-        print("Error:", e)
-        return {"status": "error", "detail": str(e)}
+        return templates.TemplateResponse("contact.html", {"request": request, "error": f"{type(e).__name__}: {e}"})
 
-
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
-
-
-@app.get("/", response_class=HTMLResponse)
-async def show_loader(request: Request):
-    return templates.TemplateResponse("loader.html", {"request": request})
-
-
-@app.get("/home", response_class=HTMLResponse)
-def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-
-
-@app.get("/services", response_class=HTMLResponse)
-def services(request: Request):
-    return templates.TemplateResponse(
-        "services.html", {"request": request, "no_navbar": True, "no_background": True}
-    )
-
-
-@app.get("/projects", response_class=HTMLResponse)
-def projects(request: Request):
-    return templates.TemplateResponse(
-        "projects.html", {"request": request, "no_navbar": True, "no_background": True}
-    )
-
-
-@app.get("/education", response_class=HTMLResponse)
-def education(request: Request):
-    return templates.TemplateResponse(
-        "education.html", {"request": request, "no_navbar": True, "no_background": True}
-    )
-
-
-@app.get("/contact", response_class=HTMLResponse)
-def contact(request: Request):
-    return templates.TemplateResponse(
-        "contact.html", {"request": request, "no_navbar": True, "no_background": True}
-    )
 
 
 if __name__ == "__main__":
     import uvicorn
-
-    uvicorn.run(app=FastAPI(debug=True))
+    uvicorn.run(app=FastAPI)

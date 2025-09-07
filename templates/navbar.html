@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+</head>
+<body>
+    <!-- Toggle Checkbox -->
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+    <!-- Navbar -->
+    <header class="fixed flex justify-between items-center p-6 fixed z-20 w-full bg-white">
+        <h1 class="text-xl sm:text-2xl font-bold">MyPortfolio</h1>
+
+        <!-- Hamburger -->
+        <label for="menu-toggle" class="cursor-pointer z-30">
+            <div class="space-y-1">
+                <span class="block w-7 sm:w-8 h-1 bg-black rounded"></span>
+                <span class="block w-7 sm:w-8 h-1 bg-black rounded"></span>
+                <span class="block w-7 sm:w-8 h-1 bg-black rounded"></span>
+            </div>
+        </label>
+    </header>
+
+    <!-- Sidebar + Social Strip wrapper (linked with peer) -->
+    <div class=" fixed top-0 right-0 flex translate-x-full peer-checked:translate-x-0
++ transition-transform duration-300 z-20">
+
+        <!-- Sidebar (Right side) -->
+        <aside class="h-auto w-64 sm:w-72 lg:w-80 bg-black text-white
+    p-6 sm:p-8 flex flex-col justify-between relative">
+
+            <!-- Close Button -->
+            <label for="menu-toggle" class="cursor-pointer text-2xl sm:text-3xl font-bold absolute top-6 right-6">&times;</label>
+
+            <!-- Nav Links -->
+            <nav class="flex flex-col space-y-6 mt-16 text-lg sm:text-xl font-serif">
+                <a href="/" class="hover:underline">Home</a>
+
+                <details class="group">
+                    <summary class="cursor-pointer flex justify-between items-center hover:underline">
+                        Projects
+                        <span class="ml-2 transition-transform duration-300 group-open:rotate-45">+</span>
+                    </summary>
+                    <div class="ml-4 mt-2 flex flex-col space-y-2 text-base sm:text-lg ">
+                        <a href="/zomato-data-analysis-by-shuba" class="hover:underline">Zomato Data Analysis - ML</a>
+                        <a href="/blood-bank-ms-by-shuba" class="hover:underline">Blood Bank MS</a>
+                        
+                    </div>
+                </details>
+
+                <a href="/contact" class="hover:underline">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- Social Strip (narrow bar on far right) -->
+        <div class="h-auto sm:h-auto w-10 sm:w-12 md:w-14 bg-white border-l border-gray-300
+  flex flex-col items-right justify-start pt-10  space-y-6 sm:space-y-8">
+
+            <a href="https://x.com/shuba_s_" target="_blank"
+               class="text-black font-bold text-xs sm:text-sm rotate-90 p-2 vertical-link">
+                Twitter
+            </a>
+            <a href="https://linkedin.com/in/shuba-s01" target="_blank"
+               class="text-black font-bold text-xs sm:text-sm rotate-90 p-2 vertical-link">
+                LinkedIn
+            </a>
+            <a href="https://www.instagram.com/_shuba_.s/" target="_blank"
+               class="text-black font-bold text-xs sm:text-sm rotate-90 p-2 vertical-link">
+                Instagram
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank MS</title>
+    <link href="./static/css/manual.css" rel="stylesheet" />
+    <link href="./static/css/output.css" rel="stylesheet" />
+</head>
+<body>
+    <main class="hwrap">
+        {% include "navbar.html" %}
+        <!-- Slide 1 -->
+        <!-- Slide 1 -->
+        <section class="panel bg-white min-h-screen flex items-center justify-center px-4">
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto">
+
+                <!-- Left: Text Content -->
+                <div class="text-center md:text-left max-w-3xl flex-shrink-0 px-8">
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
+                        🩸 Blood Bank Management System
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl mb-6">
+                        A full-stack Django application to streamline blood donation, requests, and inventory tracking with an integrated admin panel.
+                    </p>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <a href="https://github.com/Shuba0S/Blood-Bank-MS" target="_blank"
+                           class="bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base">
+                            🔗 View on GitHub
+                        </a>
+                        <a href="mailto:shuba9902@gmail.com"
+                           class="bg-black text-white  px-6 py-3 rounded-lg font-semibold text-sm sm:text-base">
+                            📧 Contact Me
+                        </a>
+                        <a href="https://linkedin.com/in/shuba-s01" target="_blank"
+                           class="bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base">
+                            🌐 Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visit Site Button -->
+                <!-- Mobile + Tablet (normal centered button) -->
+                <div class="w-full flex justify-center mt-6 lg:hidden">
+                    <a href="https://blood-bank-ms.vercel.app" target="_blank"
+                       class="bg-black text-white px-6 py-3 rounded-lg font-bold text-lg sm:text-xl shadow-lg
+            hover:scale-105 transition-transform text-center inline-block">
+                        🌐 Visit Site
+                    </a>
+                </div>
+
+                <!-- Desktop (rotated side button) -->
+                <div class="hidden lg:flex justify-end items-center px-8">
+                    <a href="https://blood-bank-ms.vercel.app" target="_blank"
+                       class="bg-black text-white px-6 py-3 rounded-lg font-bold text-lg sm:text-xl shadow-lg
+            hover:scale-105 transition-transform rotate-90 origin-center text-center inline-block">
+                        🌐 Visit Site
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+        <!-- Slide 2 -->
+        <section class="panel bg-white min-h-screen flex items-center px-4 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-10">
+
+                <!-- Left: Text Content -->
+                <div class="md:w-1/2 text-left md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">📖 Project Overview</h2>
+                    <p class="text-sm sm:text-base md:text-lg leading-relaxed mb-8">
+                        The Blood Bank Management System is designed to simplify the process of donating and requesting blood.
+                        It connects donors, patients, and administrators through a unified platform. With secure authentication,
+                        transparent tracking, and a clean UI, it ensures blood availability is managed efficiently and responsibly.
+                    </p>
+                    <ul class="list-disc list-inside space-y-3 text-sm sm:text-base md:text-lg">
+                        <li>🩸 Donors can register, donate, and view history</li>
+                        <li>🏥 Patients can request specific blood groups</li>
+                        <li>🛠️ Admins oversee requests, approvals & inventory</li>
+                        <li>📊 Real-time tracking of donations and requests</li>
+                    </ul>
+                </div>
+
+                <!-- Right: Side Image -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="./static/images/secondpro/frontpage.png"
+                         alt="Blood Bank overview"
+                         class="rounded-2xl shadow-lg object-cover w-full max-w-sm sm:max-w-md md:max-w-lg h-auto" />
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Slide 3 -->
+        <section class="panel bg-white min-h-screen flex items-center px-4 py-12">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">📊 System Snapshots</h2>
+                <p class="text-lg md:text-xl mb-10 opacity-80">
+                    Key modules from the application showcasing functionality.
+                </p>
+                <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-6">
+                    👉 Tap on any image to view it in full screen
+                </p>
+
+                <!-- Image Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+                    <!-- Image 1 -->
+                    <a href="./static/images/secondpro/donor-dashB.png" target="_blank"
+                       class="group block">
+                        <div class="rounded-lg shadow-lg overflow-hidden">
+                            <img src="./static/images/secondpro/donor-dashB.png"
+                                 alt="Donor dashboard"
+                                 class="object-cover w-full h-64 sm:h-72 md:h-80 transition-transform duration-300 group-hover:scale-105" />
+                        </div>
+                        <p class="mt-3 text-base md:text-lg font-medium">🧑‍🤝‍🧑 Donor Dashboard</p>
+                    </a>
+
+                    <!-- Image 2 -->
+                    <a href="./static/images/secondpro/blood-req-form.png"
+                       target="_blank"
+                       class="group block">
+                        <div class="rounded-lg shadow-lg overflow-hidden">
+                            <img src="./static/images/secondpro/blood-req-form.png"
+                                 alt="Blood request form"
+                                 class="object-cover w-full h-64 sm:h-72 md:h-80 transition-transform duration-300 group-hover:scale-105" />
+                        </div>
+                        <p class="mt-3 text-base md:text-lg font-medium">📄 Blood Request Form</p>
+                    </a>
+
+                    <!-- Image 3 -->
+                    <a href="./static/images/secondpro/admin-panel.png"
+                       target="_blank"
+                       class="group block">
+                        <div class="rounded-lg shadow-lg overflow-hidden">
+                            <img src="./static/images/secondpro/admin-panel.png"
+                                 alt="Admin panel"
+                                 class="object-cover w-full h-64 sm:h-72 md:h-80 transition-transform duration-300 group-hover:scale-105" />
+                        </div>
+                        <p class="mt-3 text-base md:text-lg font-medium">⚙️ Admin Management Panel</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Slide 4 -->
+        <section class="panel bg-white min-h-screen flex items-center px-4 py-16">
+            <div class="max-w-6xl mx-auto space-y-20">
+
+                <!-- Key Takeaways -->
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">🎯 Key Highlights</h2>
+                        <ul class="list-disc list-inside space-y-3 text-base md:text-lg">
+                            <li>✅ Simplifies donor-patient-admin communication</li>
+                            <li>🔐 Secure login for different user roles</li>
+                            <li>📑 Easy tracking of blood donations & requests</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <img src="./static/images/secondpro/donor-dashB.png" class="rounded-xl shadow-lg object-cover" alt="Donor flow">
+                        <img src="./static/images/secondpro/admin-panel.png" class="rounded-xl shadow-lg object-cover" alt="Admin panel">
+                    </div>
+                </div>
+
+
+                <!-- Tech Stack -->
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <img src="./static/images/secondpro/tech-stack-python-django.jpg" class="rounded-xl shadow-lg object-cover" alt="Django">
+                        <img src="./static/images/secondpro/tect-stack-postgresql.jpg" class="rounded-xl shadow-lg object-cover" alt="PostgreSQL">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">🛠️ Tech Stack Used</h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-base md:text-lg font-semibold">
+                            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl shadow hover:scale-105 transition-transform">
+                                <img src="./static/images/django.svg" alt="Python logo" class="w-8 h-8">
+                                <span>Python / Django</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl shadow hover:scale-105 transition-transform">
+                                <img src="./static/images/postgre.svg" alt="PostgreSQL logo" class="w-8 h-8">
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl shadow hover:scale-105 transition-transform">
+                                <img src="./static/images/html.svg" alt="HTML logo" class="w-8 h-8">
+                                <span>HTML / CSS</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl shadow hover:scale-105 transition-transform">
+                                <img src="./static/images/tailwind-css.svg" alt="Tailwind logo" class="w-8 h-8">
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl shadow hover:scale-105 transition-transform">
+                                <img src="./static/images/secondpro/pypi-whitenoise.png" alt="Whitenoise logo" class="w-8 h-8">
+                                <span>Whitenoise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <section class="panel bg-white min-h-screen flex items-center justify-center px-6 py-16">
+            <div class="relative max-w-4xl w-full border border-black rounded-xl p-12 text-center">
+                <!-- Overlay Stripe -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-black"></div>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">🚀 Explore the Project</h2>
+                <p class="text-base mb-6">
+                    See how technology can make blood donation easier and more transparent.<br>
+                    Check the complete project on GitHub or explore the deployed version.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/Shuba0S/Blood-Bank-MS" target="_blank"
+                       class="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">
+                        🔗 View on GitHub
+                    </a>
+
+                    <!-- Live Site Link -->
+                    <a href="https://blood-bank-ms.vercel.app" target="_blank"
+                       class="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">
+                        🌐 Visit Deployed Site
+                    </a>
+                </div>
+
+                <div class="h-px bg-black w-24 mx-auto my-10"></div>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">🔮 Future Improvements</h2>
+                <ul class="list-disc list-inside space-y-2 text-base">
+                    <li>📱 SMS/Email alerts for request updates</li>
+                    <li>📊 Analytics dashboard for admins</li>
+                    <li>🤖 AI to predict urgent blood demand</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!--slide last-->
+        <section class="panel bg-black text-white min-h-screen flex flex-col justify-center items-center px-6 py-20">
+            <!-- Brand -->
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-extrabold tracking-wide mb-4">Shuba S</h2>
+                <p class="text-gray-400 max-w-2xl text-center mx-auto text-base md:text-lg">
+                    Developer focused on <span class="text-white">Python</span>,
+                    <span class="text-white">JavaScript</span>, full-stack apps, and creative projects.
+                </p>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid gap-10 md:gap-16 md:grid-cols-3 w-full max-w-6xl text-center">
+                <!-- Services -->
+                <div class="bg-gray-900 rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="font-semibold text-lg mb-4 border-b border-gray-700 pb-2">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Python Development</li>
+                        <li>Full Stack Web</li>
+                        <li>Game Development</li>
+                        <li>MERN Stack</li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="bg-gray-900 rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="font-semibold text-lg mb-4 border-b border-gray-700 pb-2">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#projects" class="hover:text-white">Projects</a></li>
+                        <li><a href="#services" class="hover:text-white">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="bg-gray-900 rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <h3 class="font-semibold text-lg mb-4 border-b border-gray-700 pb-2">Follow Me</h3>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 place-items-center">
+                        <a href="https://linkedin.com/in/shuba-s01" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/linkedin.svg" alt="Linkedin" class="h-8 w-8 invert">
+                        </a>
+                        <a href="https://github.com/Shuba0S" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/github.svg" alt="GitHub" class="h-8 w-8 invert">
+                        </a>
+                        <a href="https://www.instagram.com/_shuba_.s/" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/instagram.svg" alt="Instagram" class="h-8 w-8">
+                        </a>
+                        <a href="https://facebook.com/shuba0s/" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/facebook.svg" alt="Facebook" class="h-8 w-8">
+                        </a>
+                        <a href="https://www.twitch.tv/sk_pulz/" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/twitch.svg" alt="Twitch" class="h-8 w-8">
+                        </a>
+                        <a href="https://www.youtube.com/@SK_pulz/" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/youtube.svg" alt="YouTube" class="h-8 w-8">
+                        </a>
+                        <a href="https://discord.gg/kTh4uAMf" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/discord.svg" alt="Discord" class="h-8 w-8">
+                        </a>
+                        <a href="https://x.com/shuba_s_" target="_blank" class="hover:opacity-70">
+                            <img src="./static/images/x.svg" alt="X" class="h-8 w-8">
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <script>const hwrap = document.querySelector('.hwrap');
+
+    hwrap.addEventListener('wheel', (event) => {
+        // Speed factor (increase for faster scroll)
+        const speed = 2;
+
+        // Check if user scrolled vertically
+        if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+            event.preventDefault(); // Prevent default vertical scroll
+            hwrap.scrollBy({
+                left: event.deltaY * speed,
+                behavior: 'smooth'
+            });
+        }
+    }, { passive: false });
+    </script>
+
+</body>
+</html>

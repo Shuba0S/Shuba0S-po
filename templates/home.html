@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shuba S - Portfolio</title>
+    <link rel="icon" href="./static/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./static/css/output.css" type="text/css" />
+    <link rel="stylesheet" href="./static/css/manual.css" type="text/css" />
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="sticky top-6 bg-black text-white flex flex-col items-center justify-center text-center px-6 py-12 md:py-24">
+        <img src="./static/images/mypichome.png" alt="Shuba Photo"
+             class="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 border border-black mb-3 md:mb-4 rounded-full object-cover">
+
+        <h1 class="text-3xl md:text-6xl font-bold leading-snug md:leading-tight">Shuba S</h1>
+
+        <p class="mt-4 text-base md:text-2xl max-w-xl md:max-w-2xl leading-relaxed px-2 md:px-0">
+            I’m a Computer Science graduate skilled in Python and JavaScript, with a focus on creating scalable web applications and engaging web experiences.
+        </p>
+
+        <div class="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="bg-white text-black px-6 py-3 rounded-lg font-semibold text-center">Hire Me</a>
+            <a href="#projects" class="border border-white px-6 py-3 rounded-lg font-semibold text-center">View Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="sticky top-6 bg-white text-black py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- Text -->
+            <div class="text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center md:items-start justify-between mb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold">About Me</h2>
+
+                    <!-- CV Download Button -->
+                    <a href="./static/files/Shuba_CV.pdf" download
+                       class="px-6 py-3 bg-black text-white font-semibold rounded-lg shadow-lg hover:bg-gray-800 transition">
+                        📄 Download CV
+                    </a>
+                </div>
+                <section class="bg-gray-200 hover:scale-105 p-6 rounded-2xl shadow-lg text-left">
+                    <p class="text-sm md:text-base leading-relaxed mb-4">
+                        I’m a Computer Science engineering graduate (2025) with hands-on experience in
+                        <span class="font-semibold">full-stack development, AI/ML, and cloud-based applications</span>.
+                        Over the past few years, I’ve built projects ranging from <span class="font-semibold">deep learning models</span>
+                        and <span class="font-semibold">accessible e-commerce platforms</span> to
+                        <span class="font-semibold">scalable web and CRM applications</span>.
+                    </p>
+                </section>
+                <section class="bg-gray-200 hover:scale-105 p-6 rounded-2xl shadow-lg text-left mt-4">
+                    <p class="text-sm md:text-base leading-relaxed">
+                        Through internships at <span class="font-semibold">Deepcept AI, SmartInternz, and Techplement</span>,
+                        I’ve gained practical experience in building <span class="font-semibold">REST APIs, interactive UIs, and automation workflows</span>.
+                        I enjoy solving challenging problems, working in collaborative teams, and continuously exploring new tools in
+                        <span class="font-semibold">Python, React, Flask, Django, and TensorFlow</span>.
+                    </p>
+                </section>
+
+            </div>
+
+            <!-- Responsive Image Cluster -->
+            <div class="relative w-full">
+                <!-- Mobile/Tablet: Grid -->
+                <div class="grid grid-cols-2 gap-4 md:hidden">
+                    <img src="./static/images/aboutme1.jpg" alt="Abstract tech"
+                         class="w-full aspect-square rounded-full object-cover shadow-lg border">
+                    <img src="./static/images/aboutme2.jpg" alt="Team work"
+                         class="w-full aspect-square rounded-full object-cover shadow-lg border">
+                    <img src="./static/images/aboutme3.jpg" alt="Code close-up"
+                         class="w-full aspect-square rounded-full object-cover shadow-lg border">
+                    <img src="./static/images/aboutme4.jpg" alt="Data visualization"
+                         class="w-full aspect-square rounded-full object-cover shadow-lg border">
+                </div>
+
+                <!-- Desktop: Cluster -->
+                <div class="hidden md:block relative h-80 w-full">
+                    <img src="./static/images/aboutme1.jpg" alt="Abstract tech"
+                         class="absolute top-0 left-5 w-28 h-28 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover shadow-lg border">
+                    <img src="./static/images/aboutme2.jpg" alt="Team work"
+                         class="absolute top-16 left-24 md:top-24 md:left-40 w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full object-cover shadow-lg border">
+                    <img src="./static/images/aboutme3.jpg" alt="Code close-up"
+                         class="absolute bottom-0 left-0 w-28 h-28 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover shadow-lg border">
+                    <img src="./static/images/aboutme4.jpg" alt="Data visualization"
+                         class="absolute top-12 right-5 md:top-20 md:right-12 w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full object-cover shadow-lg border">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Tech Stack Section -->
+    <section class="relative top-20 bg-black text-white py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-6">Technologies I Work With</h2>
+            <p class="text-lg text-center mb-6">Tap on each section to learn more about the technologies I use.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Frontend -->
+                <details class="group relative">
+                    <summary class="text-xl font-semibold mb-4 flex items-center cursor-pointer">
+                        <img src="./static/images/frontend.svg" alt="React" class="h-6 mr-2">Frontend
+                    </summary>
+                    <div class="space-y-2 text-lg opacity-0 transition-all duration-300 group-open:opacity-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><img src="./static/images/html.svg" alt="HTML" class="h-5 mr-2">HTML</li>
+                            <li class="flex items-center"><img src="./static/images/css.svg" alt="CSS" class="h-5 mr-2">CSS</li>
+                            <li class="flex items-center"><img src="./static/images/tailwind-css.svg" alt="TailwindCSS" class="h-5 mr-2">TailwindCSS</li>
+                            <li class="flex items-center"><img src="./static/images/bootstrap.svg" alt="Bootstrap" class="h-5 mr-2">Bootstrap</li>
+                            <li class="flex items-center"><img src="./static/images/react.svg" alt="React" class="h-5 mr-2">React</li>
+                            <li class="flex items-center"><img src="./static/images/next-js.svg" alt="Next.js" class="h-5 mr-2 invert">Next.js</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Backend -->
+                <details class="group relative">
+                    <summary class="text-xl font-semibold mb-4 flex items-center cursor-pointer">
+                        <img src="./static/images/backend.svg" alt="Backend" class="h-6 mr-2">Backend
+                    </summary>
+                    <div class="space-y-2 text-lg opacity-0 transition-all duration-300 group-open:opacity-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><img src="./static/images/flask.svg" alt="Flask" class="h-5 mr-2">Flask</li>
+                            <li class="flex items-center"><img src="./static/images/fastapi.svg" alt="FastAPI" class="h-5 mr-2">FastAPI</li>
+                            <li class="flex items-center"><img src="./static/images/django.svg" alt="Django" class="h-5 mr-2">Django</li>
+                            <li class="flex items-center"><img src="./static/images/node-js.svg" alt="Node.js" class="h-5 mr-2 invert">Node.js</li>
+                            <li class="flex items-center"><img src="./static/images/express-js.svg" alt="Express" class="h-5 mr-2">Express</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Databases -->
+                <details class="group relative">
+                    <summary class="text-xl font-semibold mb-4 flex items-center cursor-pointer">
+                        <img src="./static/images/database.svg" alt="MongoDB" class="h-6 mr-2">Databases
+                    </summary>
+                    <div class="space-y-2 text-lg opacity-0 transition-all duration-300 group-open:opacity-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><img src="./static/images/mongodb.svg" alt="MongoDB" class="h-5 mr-2">MongoDB</li>
+                            <li class="flex items-center"><img src="./static/images/mysql.svg" alt="MySQL" class="h-5 mr-2">MySQL</li>
+                            <li class="flex items-center"><img src="./static/images/postgre.svg" alt="PostgreSQL" class="h-5 mr-2">PostgreSQL</li>
+                            <li class="flex items-center"><img src="./static/images/sqlite.svg" alt="SQLite" class="h-5 mr-2">SQLite</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- DevOps -->
+                <details class="group relative">
+                    <summary class="text-xl font-semibold mb-4 flex items-center cursor-pointer">
+                        <img src="./static/images/devops.svg" alt="Devops" class="h-6 mr-2">DevOps
+                    </summary>
+                    <div class="space-y-2 text-lg opacity-0 transition-all duration-300 group-open:opacity-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><img src="./static/images/github.svg" alt="GitHub Actions" class="h-5 mr-2 invert">GitHub Actions</li>
+                            <li class="flex items-center"><img src="./static/images/docker.svg" alt="Docker" class="h-5 mr-2">Docker</li>
+                            <li class="flex items-center"><img src="./static/images/kubernetes.svg" alt="Kubernetes" class="h-5 mr-2">Kubernetes</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Tools -->
+                <details class="group relative">
+                    <summary class="text-xl font-semibold mb-4 flex items-center cursor-pointer">
+                        <img src="./static/images/others.svg" alt="Tools and Others" class="h-6 mr-2">Tools & Others
+                    </summary>
+                    <div class="space-y-2 text-lg opacity-0 transition-all duration-300 group-open:opacity-100">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><img src="./static/images/git.svg" alt="Git" class="h-5 mr-2">Git</li>
+                            <li class="flex items-center"><img src="./static/images/VS2022.svg" alt="Visual Studio 2022" class="h-5 mr-2">Visual Studio 2022</li>
+                            <li class="flex items-center"><img src="./static/images/vscode.svg" alt="VS Code" class="h-5 mr-2">VS Code</li>
+                            <li class="flex items-center"><img src="./static/images/windows.svg" alt="Windows" class="h-5 mr-2">Windows</li>
+                            <li class="flex items-center"><img src="./static/images/ubuntu.svg" alt="Ubuntu" class="h-5 mr-2">Ubuntu</li>
+                            <li class="flex items-center"><img src="./static/images/kali.svg" alt="Kali Linux" class="h-5 mr-2">Kali Linux</li>
+                            <li class="flex items-center"><img src="./static/images/unity.svg" alt="Unity Game Engine" class="h-5 mr-2 invert">Unity Game Engine</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="sticky top-6 bg-white py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+            <!-- Images Left -->
+            <div class="lg:w-1/3 text-center mb-8 lg:mb-0">
+                <img src="./static/images/girl.png" alt="Stickman Guide"
+                     class="mb-4 mx-auto w-40 h-40 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain">
+                <p class="text-xl font-semibold mt-4">Check out my projects!</p>
+            </div>
+
+            <!-- Content Right -->
+            <div class="w-full lg:w-2/3 text-center">
+                <h2 class="text-4xl font-bold mb-6">Explore My Projects</h2>
+                <p class="text-lg mb-8">Explore each project to learn about the technologies I’ve used, the challenges I’ve overcome, and the impact they’ve had. Click to dive deeper into my work:</p>
+
+                <!-- Scrollable Dropdown -->
+                <div class="relative mb-8">
+                    <select class="block w-64 mx-auto bg-black text-white border border-transparent rounded-lg p-3 cursor-pointer transition-all duration-300">
+                        <option>Select a project</option>
+                        <option value="firstpro.html">Zomato Data Analysis -  ML</option>
+                        <option value="secondpro.html">Blood Bank MS</option>
+                        
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="sticky bg-black text-white py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12">My Development Focus</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Python Development -->
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="./static/images/python-dev.gif" alt="Python Development" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Python Development</h3>
+                    <p class="text-base">Building scalable and efficient backends using Flask, Django, and FastAPI.</p>
+                </div>
+                <!-- Full Stack Web Development -->
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="./static/images/mern-dev.gif" alt="Full Stack Web Development" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Full Stack Web Development (Python)</h3>
+                    <p class="text-base">Creating modern web apps with Flask, Django, and frontend frameworks like React.</p>
+                </div>
+                <!-- Game Development -->
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="./static/images/game-dev.gif" alt="Game Development" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">Game Development (Python)</h3>
+                    <p class="text-base">Developing engaging 2D games using Pygame with custom graphics and sound.</p>
+                </div>
+                <!-- MERN Stack Development -->
+                <div class="p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="./static/images/web-dev.gif" alt="MERN Stack Development" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-2">MERN Stack Development</h3>
+                    <p class="text-base">Building dynamic, responsive apps with MongoDB, Express, React, and Node.js.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="sticky bg-white py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <img src="./static/images/contactpic.jpg" alt="Contact Hero" class="w-full h-64 object-cover rounded-lg mb-8 border border-black shadow-lg">
+            <h2 class="text-5xl font-extrabold text-black mb-6">Let’s Build Something Great</h2>
+            <p class="text-lg text-black mb-10">Click below and let’s start the conversation.</p>
+            <a href="/contact" class="px-12 py-4 text-lg font-semibold bg-black text-white rounded-full hover:bg-white hover:text-black border border-black transition">
+                Contact Me
+            </a>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <!--5th idea-->
+    <footer class="sticky bg-black text-white py-16 px-6 md:px-20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10">
+
+            <!-- Brand -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Shuba S</h2>
+                <p class="text-gray-300 text-sm">Developer focused on Python, JavaScript, full-stack apps, and creative projects.</p>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="font-bold mb-4">Services</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>Python Development</li>
+                    <li>Full Stack Web</li>
+                    <li>Game Development</li>
+                    <li>MERN Stack</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="#projects" class="hover:text-white">Projects</a></li>
+                    <li><a href="#services" class="hover:text-white">Services</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div>
+                <h3 class="font-bold mb-4">Follow Me</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-lg place-items-left">
+                    <a href="https://linkedin.com/in/shuba-s01" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/linkedin.svg" alt="Linkedin" class="h-8 w-8 invert">
+                    </a>
+                    <a href="https://github.com/Shuba0S" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/github.svg" alt="GitHub" class="h-6 w-12 invert">
+                    </a>
+                    <a href="https://www.instagram.com/_shuba_.s/" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/instagram.svg" alt="Instagram" class="h-6 w-12">
+                    </a>
+                    <a href="https://facebook.com/shuba0s/" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/facebook.svg" alt="Facebook" class="h-6 w-12">
+                    </a>
+                    <a href="https://www.twitch.tv/sk_pulz/" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/twitch.svg" alt="Twitch" class="h-6 w-12">
+                    </a>
+                    <a href="https://www.youtube.com/@SK_pulz/" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/youtube.svg" alt="YouTube" class="h-6 w-12">
+                    </a>
+                    <a href="https://discord.gg/kTh4uAMf" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/discord.svg" alt="Discord" class="h-6 w-12">
+                    </a>
+                    <a href="https://x.com/shuba_s_" target="_blank" class="hover:opacity-70">
+                        <img src="./static/images/x.svg" alt="X" class="h-6 w-12">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 border-t border-gray-700 text-center pt-6 text-gray-400 text-xs">
+            © 2025 Shuba S — Portfolio
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
