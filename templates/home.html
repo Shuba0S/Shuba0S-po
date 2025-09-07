@@ -199,11 +199,11 @@
 
                 <!-- Scrollable Dropdown -->
                 <div class="relative mb-8">
-                    <select class="block w-64 mx-auto bg-black text-white border border-transparent rounded-lg p-3 cursor-pointer transition-all duration-300">
-                        <option>Select a project</option>
-                        <option value="firstpro.html">Zomato Data Analysis -  ML</option>
-                        <option value="secondpro.html">Blood Bank MS</option>
-                        <option value="home.html">Portfolio</option>
+                    <select class="block w-64 mx-auto bg-black text-white border border-transparent rounded-lg p-3 cursor-pointer transition-all duration-300" onchange="if (this.value) window.open(this.value, '_blank');">
+                        <option value="none" selected >Select a project</option>
+                        <option value="/zomato-data-analysis-by-shuba">Zomato Data Analysis -  ML</option>
+                        <option value="/blood-bank-ms-by-shuba">Blood Bank MS</option>
+                        <option value="/">Portfolio</option>
                     </select>
                 </div>
             </div>
