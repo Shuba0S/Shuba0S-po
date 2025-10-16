@@ -29,12 +29,16 @@ async def home(request:Request):
     return templates.TemplateResponse("home.html",{"request":request})
 
 @app.get("/zomato-data-analysis-by-shuba",response_class="HTMLResponse")
-async def home(request:Request):
+async def firstpro(request:Request):
     return templates.TemplateResponse("firstpro.html",{"request":request})
 
 @app.get("/blood-bank-ms-by-shuba",response_class="HTMLResponse")
-async def home(request:Request):
+async def secondpro(request:Request):
     return templates.TemplateResponse("secondpro.html",{"request":request})
+
+@app.get("/Journey-Quest-Travel-Guide-by-shuba",response_class="HTMLReponse")
+async def thirdpro(request:Request):
+    return templates.TemplateResponse("thirdpro.html",{"request":request})
 
 @app.get("/contact",response_class="HTMLResponse")
 async def contact(request:Request):
