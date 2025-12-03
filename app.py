@@ -36,6 +36,10 @@ async def firstpro(request:Request):
 async def secondpro(request:Request):
     return templates.TemplateResponse("secondpro.html",{"request":request})
 
+@app.get("/shuba-portfolio",response_class="HTMLResponse")
+async def portfoliopro(request:Request):
+    return templates.TemplateResponse("portfoliopro.html",{"request":request})
+
 @app.get("/Journey-Quest-Travel-Guide-by-shuba",response_class="HTMLReponse")
 async def thirdpro(request:Request):
     return templates.TemplateResponse("thirdpro.html",{"request":request})
