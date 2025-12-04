@@ -44,6 +44,10 @@ async def portfoliopro(request:Request):
 async def thirdpro(request:Request):
     return templates.TemplateResponse("thirdpro.html",{"request":request})
 
+@app.get("/geniegobot-shuba",response_class="HTMLResponse")
+async def fourthpro(request:Request):
+    return templates.TemplateResponse("fourthpro.html",{"request":request})
+
 @app.get("/contact",response_class="HTMLResponse")
 async def contact(request:Request):
     return templates.TemplateResponse("contact.html",{"request":request})

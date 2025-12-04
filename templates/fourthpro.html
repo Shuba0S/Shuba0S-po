@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JourneyQuest – Travel Guide Website</title>
+    <title>AI Chatbot System – Flask + OpenAI</title>
     <link href="./static/css/manual.css" rel="stylesheet" />
     <link href="./static/css/output.css" rel="stylesheet" />
 </head>
@@ -18,13 +18,13 @@
                 <!-- Left: Text Content -->
                 <div class="text-center md:text-left max-w-3xl flex-shrink-0 px-8">
                     <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
-                        🌍 JourneyQuest – Travel Guide Website
+                        🧠 AI Chatbot System – Flask + OpenAI
                     </h1>
                     <p class="text-base sm:text-lg md:text-xl mb-6">
-                        A dynamic Flask web application designed to help travelers explore destinations, view travel themes, and access curated details like sightseeing spots, hotels, restaurants, and nearby attractions.
+                        A local-development AI chatbot built with Flask, OpenAI API, and SQLite. Users can register, log in, and hold up to three active conversations with an assistant powered by GPT.
                     </p>
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                        <a href="https://github.com/Shuba0S/journey-quest-travel-guide" target="_blank"
+                        <a href="https://github.com/Shuba0S/geniegobot" target="_blank"
                            class="bg-black text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base">
                             🔗 View on GitHub
                         </a>
@@ -41,16 +41,16 @@
 
                 <!-- Visit Site Button -->
                 <div class="w-full flex justify-center mt-6 lg:hidden">
-                    <a href="https://drive.google.com/file/d/1osTDpJ1GJCS6kZ4pGmPuWickOBSnOF5N/view?usp=drivesdk" target="_blank"
+                    <a href="https://github.com/Shuba0S/geniegobot" target="_blank"
                        class="bg-black text-white px-6 py-3 rounded-lg font-bold text-lg sm:text-xl shadow-lg hover:scale-105 transition-transform text-center inline-block">
-                        🌐 Visit demo
+                        🌐 View repository
                     </a>
                 </div>
 
                 <div class="hidden lg:flex justify-end items-center px-8">
-                    <a href="https://drive.google.com/file/d/1osTDpJ1GJCS6kZ4pGmPuWickOBSnOF5N/view?usp=drivesdk" target="_blank"
+                    <a href="https://github.com/Shuba0S/geniegobot" target="_blank"
                        class="bg-black text-white px-6 py-3 rounded-lg font-bold text-lg sm:text-xl shadow-lg hover:scale-105 transition-transform rotate-90 origin-center text-center inline-block">
-                        🌐 Visit demo
+                        🌐 View repository
                     </a>
                 </div>
             </div>
@@ -64,19 +64,19 @@
                 <div class="md:w-1/2 text-left md:text-left">
                     <h2 class="text-3xl md:text-4xl text-white font-bold mb-6">📖 Project Overview</h2>
                     <p class="text-sm sm:text-base md:text-lg leading-relaxed mb-8 text-white">
-                        JourneyQuest is a comprehensive travel guide web application built using Flask and SQLite. It allows users to explore destinations by travel themes, view detailed travel information, and discover hotels, restaurants, and attractions—all through an intuitive and responsive interface.
+                        This AI Chatbot System provides user authentication, conversation management, and an interactive chat interface that uses OpenAI's GPT model. Conversations are stored in a local SQLite database and each user is limited to a maximum of three active conversations.
                     </p>
                     <ul class="list-disc text-white list-inside space-y-3 text-sm sm:text-base md:text-lg">
-                        <li>🗺️ Explore destinations by travel tags (Adventure, Beaches, History, etc.)</li>
-                        <li>🏙️ City-wise detailed travel data (Hotels, Restaurants, Attractions)</li>
-                        <li>⚙️ Dynamic backend with Flask & SQLite</li>
-                        <li>📱 Fully responsive UI using Tailwind CSS</li>
+                        <li>🔐 User registration and secure password handling with Flask-Login.</li>
+                        <li>💬 Interactive chat interface with messages stored as user/assistant roles.</li>
+                        <li>🗄️ Conversations persisted in SQLite via SQLAlchemy.</li>
+                        <li>⚙️ Built for local development and testing with python-dotenv for secrets.</li>
                     </ul>
                 </div>
 
                 <div class="md:w-1/2 flex justify-center">
-                    <img src="./static/images/thirdpro/home-page.gif"
-                         alt="JourneyQuest overview"
+                    <img src="./static/images/forthpro/login-page-forthpro.png"
+                         alt="AI Chatbot overview"
                          class="rounded-2xl shadow-lg object-cover w-full max-w-sm sm:max-w-md md:max-w-lg h-auto" />
                 </div>
             </div>
@@ -88,7 +88,7 @@
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">🎬 Visual Demonstrations</h2>
                 <p class="text-lg md:text-xl mb-10 opacity-80">
-                    Project walkthrough GIFs showing each core page in action.
+                    GIF walkthroughs show the signup, chat interface, and dashboard behavior (conversation creation, message flow, and automatic deletion when exceeding the 3-conversation limit).
                 </p>
                 <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-6">
                     👉 Tap on any image to view in full screen
@@ -96,31 +96,31 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
-                    <a href="./static/images/thirdpro/home-page.gif" target="_blank" class="group block">
+                    <a href="./static/images/forthpro/login-page-forthpro.png" target="_blank" class="group block">
                         <div class="rounded-lg shadow-lg overflow-hidden">
-                            <img src="./static/images/thirdpro/home-page.gif"
+                            <img src="./static/images/forthpro/login-page-forthpro.png"
                                  alt="Home Page"
                                  class="object-cover w-full h-64 sm:h-72 md:h-80 transition-transform duration-300 group-hover:scale-105" />
                         </div>
-                        <p class="mt-3 text-base md:text-lg font-medium">🏠 Home Page</p>
+                        <p class="mt-3 text-base md:text-lg font-medium">🏠 Landing / Home</p>
                     </a>
 
-                    <a href="./static/images/thirdpro/tag-page.gif" target="_blank" class="group block">
+                    <a href="./static/images/forthpro/dashboard-forthpro.png" target="_blank" class="group block">
                         <div class="rounded-lg shadow-lg overflow-hidden">
-                            <img src="./static/images/thirdpro/tag-page.gif"
-                                 alt="Tags Page"
+                            <img src="./static/images/forthpro/dashboard-forthpro.png"
+                                 alt="Dashboard Page"
                                  class="object-cover w-full h-64 sm:h-72 md:h-80 transition-transform duration-300 group-hover:scale-105" />
                         </div>
-                        <p class="mt-3 text-base md:text-lg font-medium">🏷️ Tags Page</p>
+                        <p class="mt-3 text-base md:text-lg font-medium">📋 Dashboard</p>
                     </a>
 
-                    <a href="./static/images/thirdpro/city-page.gif" target="_blank" class="group block">
+                    <a href="./static/images/forthpro/chat-page-forthpro.png" target="_blank" class="group block">
                         <div class="rounded-lg shadow-lg overflow-hidden">
-                            <img src="./static/images/thirdpro/city-page.gif"
-                                 alt="City Page"
+                            <img src="./static/images/forthpro/chat-page-forthpro.png"
+                                 alt="Chat Page"
                                  class="object-cover w-full h-64 sm:h-72 md:h-80 transition-transform duration-300 group-hover:scale-105" />
                         </div>
-                        <p class="mt-3 text-base md:text-lg font-medium">🏙️ City Page</p>
+                        <p class="mt-3 text-base md:text-lg font-medium">💬 Chat Interface</p>
                     </a>
                 </div>
             </div>
@@ -135,14 +135,14 @@
                     <div class="md:w-1/2">
                         <h2 class="text-3xl md:text-4xl text-white font-bold mb-6">🎯 Goals</h2>
                         <ul class="list-disc text-white list-inside space-y-3 text-base md:text-lg">
-                            <li>Help users explore destinations by travel themes.</li>
-                            <li>Display travel details such as hotels, restaurants, and nearby sights.</li>
-                            <li>Provide a clean, modular, and responsive UI.</li>
+                            <li>Provide a simple, secure local platform to test conversational AI flows.</li>
+                            <li>Allow users to manage conversations with an enforced 3-conversation limit.</li>
+                            <li>Keep the project modular and easy to extend for deployment-ready improvements.</li>
                         </ul>
                     </div>
                     <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <img src="./static/images/thirdpro/tag-pic.png" class="rounded-xl shadow-lg object-cover" alt="Tags">
-                        <img src="./static/images/thirdpro/city-pic.png" class="rounded-xl shadow-lg object-cover" alt="City details">
+                        <img src="./static/images/forthpro/dashboard-forthpro.png" class="rounded-xl shadow-lg object-cover" alt="Auth & DB">
+                        <img src="./static/images/forthpro/chat-page-forthpro.png" class="rounded-xl shadow-lg object-cover" alt="Chat UI">
                     </div>
                 </div>
 
@@ -178,41 +178,38 @@
             </div>
         </section>
 
-
         <section class="panel bg-gray-200 min-h-screen flex items-center justify-center px-6 py-16">
             <div class="relative max-w-4xl w-full border border-black rounded-xl p-12 text-center">
                 <div class="absolute top-0 left-0 w-full h-2 bg-black"></div>
 
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">🌍 Explore the JourneyQuest Project</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">🔍 Explore the Repository</h2>
                 <p class="text-sm sm:text-base mb-4">
-                    A Flask-based travel guide application showcasing destinations, travel themes, and dynamic city information.
+                    Inspect the codebase to understand how user authentication, conversation management, and GPT integration are implemented.
                 </p>
 
-                <ul class="list-disc text-left mx-auto max-w-lg mb-6 space-y-2 text-sm sm:text-base px-4 sm:px-0">
-                    <li class="px-4 sm:px-0">Browse the code to see how Flask, SQLite, and TailwindCSS work together to build a dynamic travel guide.</li>
-                    <li class="px-4 sm:px-0">Understand the database structure powering tags, cities, sightseeing spots, hotels, restaurants, and travel details.</li>
+                <ul class="list-disc text-left mx-auto max-w-lg mb-8 space-y-2 text-sm sm:text-base px-4 sm:px-0">
+                    <li class="px-4 sm:px-0">Highlights: authentication flow, conversation lifecycle (max 3 per user), and OpenAI API usage.</li>
+                    <li class="px-4 sm:px-0">Key files: <code>app.py</code>, <code>models.py</code>, <code>forms.py</code>, <code>templates/</code>, and <code>requirements.txt</code>.</li>
                 </ul>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://github.com/Shuba0S/journey-quest-travel-guide" target="_blank"
+                    <a href="https://github.com/Shuba0S/geniegobot" target="_blank"
                        class="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">
                         🔗 View on GitHub
                     </a>
-                    <a href="https://drive.google.com/file/d/1osTDpJ1GJCS6kZ4pGmPuWickOBSnOF5N/view?usp=drivesdk" target="_blank"
+                    <a href="mailto:shuba9902@gmail.com"
                        class="border-2 border-black px-6 py-3 rounded-lg hover:bg-black hover:text-white transition">
-                        🌐 Visit Demo video
+                        📧 Contact for more info
                     </a>
                 </div>
 
-                <div class="h-px bg-black w-24 mx-auto my-2"></div>
+                <div class="h-px bg-black w-24 mx-auto my-3"></div>
 
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">🔮 Future Enhancements</h2>
                 <ul class="list-disc list-inside space-y-2 text-base">
-                    <li>🔍 Add destination search and keyword-based exploration.</li>
-                    <li>🌐 Integrate map APIs for real-time location visualization.</li>
-                    <li>📱 Develop a mobile-first PWA version for offline use.</li>
-                    <li>✈️ Add user login to save favorite destinations or trip plans.</li>
-                    <li>📊 Build analytics to track most visited cities and travel tags.</li>
+                    <li>Containerize and add CI/CD for deployment (Docker, GitHub Actions).</li>
+                    <li>Implement password reset, email verification, and switch to PostgreSQL for production readiness.</li>
+                    <li>Add analytics, memory/context tracking, and optional notifications.</li>
                 </ul>
             </div>
         </section>
